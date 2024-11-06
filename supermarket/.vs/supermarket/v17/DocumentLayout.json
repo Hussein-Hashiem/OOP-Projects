@@ -1,0 +1,47 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\oop_projects\\supermarket\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73001624-F0BB-4E25-A6EF-026C591ACEC4}|supermarket\\supermarket.vcxproj|D:\\oop_projects\\supermarket\\supermarket\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{73001624-F0BB-4E25-A6EF-026C591ACEC4}|supermarket\\supermarket.vcxproj|solutionrelative:supermarket\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\oop_projects\\supermarket\\supermarket\\main.cpp",
+              "RelativeDocumentMoniker": "supermarket\\main.cpp",
+              "ToolTip": "D:\\oop_projects\\supermarket\\supermarket\\main.cpp",
+              "RelativeToolTip": "supermarket\\main.cpp",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFYAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-06T22:04:30.879Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 50,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
