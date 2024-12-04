@@ -13,6 +13,7 @@ private:
 public:
 	//constructor to initialize item with name and price and qunatity
 	item(string n, float f, int q) :name(n), price(f), quantity(q) {}
+	item() :name(""), price(0), quantity(0) {}
 	//method to print item
 	void pr() { cout << name << "            " << price << "            " << quantity << endl; }
 	//method to set item name
@@ -27,6 +28,19 @@ public:
 	float get_price() { return price; }
 	//methid to return item quantity
 	int qet_quantity() { return quantity; }
+	// ++ operator
+	void operator ++() { ++quantity; }
+	// -- operator
+	void operator --() { --quantity; }
+	// plus operator
+	item operator +(item a) 
+	{
+		item ret;
+		ret.set_name(name + "&" + a.get_name());
+		ret.set_price(price + a.get_price());
+		ret.set_quantity(quantity + a.qet_quantity());
+		return ret;
+	}
 };
 
 class store
@@ -64,6 +78,26 @@ public:
 			return a.get_name() < b.get_name();
 			});
 	}
+	// increment method
+	void increment(int id)
+	{
+		++goods[id - 1];
+	}
+	// decrement method
+	void decrement(int id)
+	{
+		--goods[id - 1];
+	}
+	// plus method
+	void plus(int id1, int id2)
+	{
+		id1--, id2--;
+		item pls = goods[id1] + goods[id2];
+		goods.push_back(pls);
+		if (id1 > id2) swap(id1, id2);
+		goods.erase(goods.begin() + id1);
+		goods.erase(goods.begin() + id2 - 1);
+	}
 };
 
 int main()
@@ -74,17 +108,21 @@ int main()
 	while (1)
 	{
 		//options
-		cout << "\n=================" << endl;
-		cout << "=================" << endl;
+		cout << "\n===================" << endl;
+		cout << "===================" << endl;
 		cout << "1 = Add Item" << endl;
 		cout << "2 = Change Item" << endl;
-		cout << "3 = Delete Item" << endl;
-		cout << "4 = Print Items" << endl;
-		cout << "5 = Print Total Price" << endl;
-		cout << "6 = Exit" << endl;
+		cout << "3 = Increment Item" << endl;
+		cout << "4 = Decrement Item" << endl;
+		cout << "5 = Sum 2 items" << endl;
+		cout << "6 = Delete Item" << endl;
+		cout << "7 = Print Items" << endl;
+		cout << "8 = Print Total Price" << endl;
+		cout << "9 = Exit" << endl;
 		cout << "What do you want..." << endl;
-		cout << "=================" << endl;
-		cout << "=================" << endl;
+		cout << "===================" << endl;
+		cout << "===================" << endl;
+		cout << "==Made By Hussein==" << endl;
 		int i; cin >> i;
 		switch (i)
 		{
@@ -117,17 +155,38 @@ int main()
 		}
 		case 3:
 		{
+			cout << "Enter ID of item you want to increment it..." << endl;
+			int i; cin >> i;
+			s.increment(i);
+			break;
+		}
+		case 4:
+		{
+			cout << "Enter ID of item you want to decrement it..." << endl;
+			int i; cin >> i;
+			s.decrement(i);
+			break;
+		}
+		case 5:
+		{
+			cout << "Enter ID of 2 items you want to sum..." << endl;
+			int id1, id2; cin >> id1 >> id2;
+			s.plus(id1, id2);
+			break;
+		}
+		case 6:
+		{
 			cout << "Enter ID of item you want to delete it..." << endl;
 			int i; cin >> i;
 			s.del(i);
 		}
-		case 4:
+		case 7:
 			s.print();
 			break;
-		case 5:
+		case 8:
 			s.total_price();
 			break;
-		case 6:
+		case 9:
 			return 0; //exit the program
 		default:
 			cout << "Invalid Input" << endl;
