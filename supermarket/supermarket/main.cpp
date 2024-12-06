@@ -31,12 +31,13 @@ public:
 	// ++ operator
 	void operator ++() { ++quantity; }
 	// -- operator
-	void operator --() { --quantity; }
+	void operator --() { if (quantity > 0)--quantity; }
 	// plus operator
 	item operator +(item a) 
 	{
 		item ret;
-		ret.set_name(name + "&" + a.get_name());
+		if (a.name == name)ret.set_name(name);
+		else ret.set_name(name + "&" + a.get_name());
 		ret.set_price(price + a.get_price());
 		ret.set_quantity(quantity + a.qet_quantity());
 		return ret;
